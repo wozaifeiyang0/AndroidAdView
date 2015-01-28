@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
+import com.youyoucy.tanghy.utils.ImageUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,11 +38,13 @@ public class ImageLoader {
      *            显示图片的ImageView
      * @param imageUrl
      *            图片的地址
+     * @param isCompress
+     *            是否压缩图片
      * @return 图片
      */
     public Bitmap loadDrawableFromNet(final ImageView imageView,
-                                      final String imageUrl) {
-        return loadDrawable(imageView, imageUrl, new LoadCallBack() {
+                                      final String imageUrl,boolean isCompress) {
+        return loadDrawable(imageView, imageUrl,isCompress, new LoadCallBack() {
             public Bitmap load(String uri) {
                 return loadImageFromNet(uri);
             }
@@ -55,11 +58,13 @@ public class ImageLoader {
      *            显示图片的ImageView
      * @param imageUrl
      *            图片的路径
+     * @param isCompress
+     *            是否压缩图片
      * @return 图片
      */
     public Bitmap loadDrawableFromLocal(final ImageView imageView,
-                                        final String imageUrl) {
-        return loadDrawable(imageView, imageUrl, new LoadCallBack() {
+                                        final String imageUrl,final boolean isCompress) {
+        return loadDrawable(imageView, imageUrl, isCompress,new LoadCallBack() {
             public Bitmap load(String uri) {
                 return loadImageFromLocal(uri);
             }
@@ -78,7 +83,7 @@ public class ImageLoader {
      * @return
      */
     private Bitmap loadDrawable(final ImageView imageView,
-                                final String imageUrl, final LoadCallBack load) {
+                                final String imageUrl,final boolean isCompress, final LoadCallBack load) {
 
         // 判断软引用里是否有图片
         if (imageCache.containsKey(imageUrl)) {
@@ -104,6 +109,7 @@ public class ImageLoader {
         new Thread() {
             public void run() {
                 Bitmap bitmap = load.load(imageUrl);//执行回调
+                if (isCompress) bitmap = ImageUtils.compressImage(bitmap);//如果isCompress为真压缩图片
                 imageCache.put(imageUrl, new SoftReference<Bitmap>(bitmap));
                 Message message = handler.obtainMessage(0, bitmap);
                 handler.sendMessage(message);
