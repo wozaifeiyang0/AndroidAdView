@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Android-Tanghy-Tools:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Android_Tanghy_Tools_jar</output-path>
+    <root id="archive" name="Android-Tanghy-Tools.jar">
+      <element id="module-output" name="Android-Tanghy-Tools" />
+    </root>
+  </artifact>
+</component>
