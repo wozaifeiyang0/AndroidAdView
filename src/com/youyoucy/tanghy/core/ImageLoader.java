@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.SoftReference;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -122,17 +123,24 @@ public class ImageLoader {
      * @return
      */
     public Bitmap loadImageFromNet(String url) {
+        Bitmap bitmap = null;
         URL m;
         InputStream i = null;
         try {
             m = new URL(url);
-            i = (InputStream) m.getContent();
+            HttpURLConnection conn = (HttpURLConnection)m.openConnection();
+            i = conn.getInputStream();
+            bitmap = BitmapFactory.decodeStream(i);
+            //关闭流
+            if (i != null )i.close();
+            //如果网络连接者断开连接
+            if (conn != null)conn.disconnect();
         } catch (MalformedURLException e1) {
             e1.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return BitmapFactory.decodeStream(i);
+        return bitmap;
     }
 
     /**
