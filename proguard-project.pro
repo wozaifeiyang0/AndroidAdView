@@ -2,7 +2,7 @@
 -injars libs
 -outjars bin\android-tanghy-tools.jar
 
--libraryjars 'E:\soft\adt-bundle-windows-x86\sdk\platforms\android-17\android.jar'
+-libraryjars 'D:\soft\adt-bundle\sdk\platforms\android-17\android.jar'
 
 -optimizations !code/simplification/arithmetic
 -allowaccessmodification
