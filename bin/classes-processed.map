@@ -9,6 +9,10 @@ com.youyoucy.tanghy.R$layout -> com.youyoucy.tanghy.R$layout:
     int main -> main
 com.youyoucy.tanghy.R$string -> com.youyoucy.tanghy.R$string:
     int app_name -> app_name
+com.youyoucy.tanghy.core.AdViewActivity -> com.youyoucy.tanghy.core.AdViewActivity:
+com.youyoucy.tanghy.core.BitmapDownloader -> com.youyoucy.tanghy.core.BitmapDownloader:
+    17:17:android.graphics.Bitmap doInBackground(java.lang.String[]) -> doInBackground
+    10:10:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 com.youyoucy.tanghy.core.DialogExit -> com.youyoucy.tanghy.core.DialogExit:
     android.app.Activity context -> a
     16:25:void exit() -> exit

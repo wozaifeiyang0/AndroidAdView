@@ -9,10 +9,6 @@ import android.widget.ImageView;
 
 import java.net.URL;
 
-/**
- * Created by IBM on 2015/1/29.
- */
-@TargetApi(3)
 public class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
 {
 
