@@ -50,6 +50,14 @@ com.youyoucy.tanghy.core.Shortcut -> com.youyoucy.tanghy.core.Shortcut:
     java.lang.String appName -> b
     int icon_launcher -> c
     27:30:boolean createShortcut() -> createShortcut
+com.youyoucy.tanghy.core.WebViewOperation -> com.youyoucy.tanghy.core.WebViewOperation:
+    android.webkit.WebView webView -> a
+    android.view.View pro -> b
+    29:30:void load(java.lang.String) -> load
+    8:8:android.view.View access$100(com.youyoucy.tanghy.core.WebViewOperation) -> a
+com.youyoucy.tanghy.core.WebViewOperation$MyWebClient -> g:
+    com.youyoucy.tanghy.core.WebViewOperation this$0 -> a
+    35:38:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
 com.youyoucy.tanghy.utils.ImageUtils -> com.youyoucy.tanghy.utils.ImageUtils:
     24:25:android.graphics.Bitmap compressImage(android.graphics.Bitmap) -> compressImage
     35:45:android.graphics.Bitmap compressImage(android.graphics.Bitmap,int) -> compressImage
