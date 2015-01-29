@@ -5,9 +5,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-/**
- * Created by IBM on 2015/1/29.
- */
 public class WebViewOperation {
 
     private WebView webView;
