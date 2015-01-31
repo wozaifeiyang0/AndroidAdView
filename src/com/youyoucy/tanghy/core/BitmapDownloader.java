@@ -1,5 +1,6 @@
 package com.youyoucy.tanghy.core;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import java.net.URL;
-
+@SuppressLint({"NewApi"})
 public class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
 {
 
